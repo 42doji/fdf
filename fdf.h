@@ -6,13 +6,12 @@
 /*   By: doji <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 19:19:43 by doji              #+#    #+#             */
-/*   Updated: 2024/05/18 19:24:08 by doji             ###   ########.fr       */
+/*   Updated: 2024/05/18 21:20:18 by doji             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
-# include <stdio.h>
 # include <fcntl.h>
 # include <math.h>
 # include "libft/libft.h"
@@ -37,6 +36,7 @@ typedef struct s_fdf
 	int		shift_y;
 }	t_fdf;
 
+int     	close_window(t_fdf *data);
 int		is_in_word(int *count, int in_word);
 int		is_split(char c, const char *delimiter);
 int		count_words(const char *word, char *delimiter);

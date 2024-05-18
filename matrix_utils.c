@@ -6,7 +6,7 @@
 /*   By: doji <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 19:41:00 by doji              #+#    #+#             */
-/*   Updated: 2024/05/18 19:41:01 by doji             ###   ########.fr       */
+/*   Updated: 2024/05/18 21:19:48 by doji             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,23 +67,10 @@ int	matrix_len(int *matrix)
 	return (i);
 }
 
-int	is_valid_matrix(t_fdf *data, int width)
+int     close_window(t_fdf *data)
 {
-	int	i;
-
-	if (!data || !data->matrix)
-		return (0);
-	i = 0;
-	while (data->matrix[i])
-	{
-		if (matrix_len(data->matrix[i]) != width)
-		{
-			free_matrix(data->matrix);
-			mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-			free(data);
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+        cleanup(data);
+        exit(0);
+        return (0);
 }
+

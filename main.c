@@ -6,7 +6,7 @@
 /*   By: doji <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 19:20:20 by doji              #+#    #+#             */
-/*   Updated: 2024/05/18 19:37:23 by doji             ###   ########.fr       */
+/*   Updated: 2024/05/18 21:19:58 by doji             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	main(int argc, char *argv[])
 	init_data(data);
 	render(data);
 	mlx_key_hook(data->win_ptr, (int (*)())key_handler, data);
+	mlx_hook(data->win_ptr, 33, 1L << 17, close_window, data);
 	mlx_loop(data->mlx_ptr);
 	cleanup(data);
 	return (0);
